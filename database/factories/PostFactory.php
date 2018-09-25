@@ -8,6 +8,6 @@ $factory->define(App\Post::class, function (Faker $faker) {
     	'user_id' => rand(1,30),
         'name' => $title,
         'body' => $faker->text(300),
-        'file' => $faker->imageUrl($width = 640, $height = 480, $category = null, $randomize = true, $word = null, $gray = false)
+        'file' => $faker->imageUrl($width = 100, $height = 100, $category = null, $randomize = true, $word = null, $gray = false)
     ];
 });

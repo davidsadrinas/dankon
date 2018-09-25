@@ -2,39 +2,46 @@
 @section('content')
 <div id="blog" class="row">
 	<div class="col-xs-offset-10 col-xs-2">
-		<a class="btn btn-primary pull-right" data-toggle="modal" data-target="#create">Add Post</a>
+		<a class="btn btn-primary pull-right" data-toggle="modal" data-target="#create">Nueva Orden</a>
 	</div>
 	
-	<div class="col-sm-offset-1 col-sm-11">
+	<div class="col-sm-offset-0 col-sm-12">
 		<div v-for="post in posts">
-				<td class="row">
-						<div class="col-sm-offset-2 col-sm-10">
-							<h1 class="page-header">@{{ post.name }}</h1>
-						</div>
-						<h2></h2>
-					
-				</td>
-				<div class="row small">
-					<div class="row col-sm-offset-2 col-sm-10">
-						User Id:@{{ post.user_id }}
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-offset-2 col-sm-10">
-						<img v-bind:src="post.file" width="600" height="400">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-offset-2 col-sm-6">
-						@{{ post.body }}
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-sm-offset-2 col-sm-10">
- 					<a href="#" class="btn btn-warning" v-on:click.prevent="editPost(post)">Edit</a>
- 					<a href="#" class="btn btn-danger" v-on:click.prevent="deletePost(post)">Delete</a>
-					</div>
-				</div>		 				
+			<table class="table ">
+				<thead>
+					<tr>
+						<th>
+
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="col-sm-1">
+							<img v-bind:src="post.file" width="50" height="50">
+						</td>
+						<td class="col-sm-2">
+							@{{ post.name }}
+						</td>
+						<td class="col-sm-1">
+							@{{ post.user_id }}
+						</td>
+						<td class="col-sm-1">
+							1 u
+						</td>
+						<td class="col-sm-4">
+							@{{ post.body }}
+						</td>
+						<td class="col-sm-1">
+							<a href="#" class="btn btn-warning" v-on:click.prevent="editPost(post)">+</a>
+
+							<a href="#" class="btn btn-warning" v-on:click.prevent="editPost(post)">-</a>
+							<a href="#" class="btn btn-danger" v-on:click.prevent="deletePost(post)">Delete</a>
+						</td>
+
+					</tr>
+				</tbody>
+			</table>
 		</div>
  		@include('create')
  		@include('edit')
