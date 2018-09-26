@@ -10,19 +10,19 @@ class Order extends Model
         'total_pay','total_fact','total_nofact'];
 
     public function user(){
-        return $this->belongsTo(User::tag);
+        return $this->belongsTo(User::class);
     }
     public function client(){
-        return $this->belongsTo(Client::tag);
+        return $this->belongsTo(Client::class);
     }
     public function payment(){
-        return $this->belongsTo(Payment::tag);
+        return $this->belongsTo(Payment::class);
     }
     public function paymentstatus(){
-        return $this->belongsTo(PaymentStatus::tag);
+        return $this->belongsTo(PaymentStatus::class);
     }
     public function items(){
-        return $this->belongsToMany(Item::tag);
+        return $this->belongsToMany(Item::class);
     }
 
 }

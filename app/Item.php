@@ -10,18 +10,18 @@ class Item extends Model
         'uxpack','unit_value','sell_value'];
 
     public function user(){
-        return $this->belongsTo(User::tag);
+        return $this->belongsTo(User::class);
     }
     public function client(){
-        return $this->belongsTo(Client::tag);
+        return $this->belongsTo(Client::class);
     }
     public function payment(){
-        return $this->belongsTo(Payment::tag);
+        return $this->belongsTo(Payment::class);
     }
     public function paymentstatus(){
-        return $this->belongsTo(PaymentStatus::tag);
+        return $this->belongsTo(PaymentStatus::class);
     }
-    public function items(){
-        return $this->belongsToMany(Item::tag);
+    public function orders(){
+        return $this->belongsToMany(Item::class, 'item_order', 'order_id', 'item_id');
     }
 }

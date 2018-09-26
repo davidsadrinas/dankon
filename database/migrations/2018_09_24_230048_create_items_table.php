@@ -17,9 +17,10 @@ class CreateItemsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->unsignedMediumInteger('q_pack');
+            $table->unsignedMediumInteger('uxpack');
             $table->string('file',128)->nulleable();
             $table->unsignedMediumInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedMediumInteger('brand_id');
             $table->timestamps();
         });

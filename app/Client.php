@@ -9,10 +9,10 @@ class Client extends Model
     protected $fillable = ['id', 'name', 'cuit'];
 
     public function addresses(){
-        return $this->hasMany(Address::tag);
+        return $this->belongsToMany(Address::tag);
     }
 
     public function phones(){
-        return $this->hasMany(Phone::tag);
+        return $this->belongsToMany(Phone::tag);
     }
 }

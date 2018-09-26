@@ -10,6 +10,6 @@ class Address extends Model
 
 
     public function client(){
-        return $this->belongsTo(Client::tag);
+        return $this->belongsToMany(Client::class);
     }
 }

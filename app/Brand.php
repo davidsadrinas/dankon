@@ -10,6 +10,6 @@ class Brand extends Model
 
 
     public function items(){
-        return $this->HasMany(Item::tag);
+        return $this->HasMany(Item::class);
     }
 }
