@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = ['id', 'user_id', 'client_id', 'payment_id', 'paymentstatus_id', 'name',
-        'total_pay','total_fact','total_nofact'];
+    protected $fillable = ['id', 'user_id', 'client_id', 'payment_id', 'payment_status_id',
+        'total','total_fact','total_nofact'];
 
     public function user(){
         return $this->belongsTo(User::class);
@@ -22,7 +22,7 @@ class Order extends Model
         return $this->belongsTo(PaymentStatus::class);
     }
     public function items(){
-        return $this->belongsToMany(Item::class);
+        return $this->belongsToMany(Item::class, 'item_order', 'item_id', 'order_id');
     }
 
 }

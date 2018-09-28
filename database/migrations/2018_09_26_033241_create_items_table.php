@@ -15,6 +15,7 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('dankon_code');
             $table->string('name');
             $table->string('description');
             $table->integer('uxpack',false,true);

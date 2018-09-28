@@ -27,14 +27,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    
-    public function posts(){
-        return $this->hasMany(Post::class);
-    }
+
     public function orders(){
         return $this->hasMany(Post::class);
     }
     public function roles(){
-        return $this->belongsTo(Role::tag, 'role_user', 'user_id', 'role_id');
+        return $this->belongsTo(Role::class);
     }
 }
