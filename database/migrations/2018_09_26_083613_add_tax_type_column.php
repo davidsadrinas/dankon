@@ -14,7 +14,7 @@ class AddTaxTypeColumn extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->integer('tax_type_id')->unsigned();
+            $table->integer('tax_type_id',false,true);
             $table->foreign('tax_type_id')->references('id')->on('tax_types');
         });
     }

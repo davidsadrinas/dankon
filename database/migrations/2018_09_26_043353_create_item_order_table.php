@@ -15,10 +15,10 @@ class CreateItemOrderTable extends Migration
     {
         Schema::create('item_order', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('item_id')->unsigned();
+            $table->integer('item_id',false,true);
             $table->foreign('item_id')->references('id')->on('items');
             $table->boolean('item_fact');
-            $table->integer('order_id')->unsigned();
+            $table->integer('order_id',false,true);
             $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });

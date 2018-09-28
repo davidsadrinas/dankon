@@ -15,9 +15,9 @@ class CreateClientPhoneTable extends Migration
     {
         Schema::create('client_phone', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('client_id')->unsigned();
+            $table->integer('client_id',false,true);
             $table->foreign('client_id')->references('id')->on('clients');
-            $table->integer('phone_id')->unsigned();
+            $table->integer('phone_id',false,true);
             $table->foreign('phone_id')->references('id')->on('phones');
             $table->timestamps();
         });
