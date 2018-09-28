@@ -15,10 +15,9 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedMediumInteger('CUIT');
+            $table->integer('CUIT',false,true);
             $table->string('name');
-            $table->unsignedMediumInteger(address_id);
-            $table->unsignedMediumInteger(phone_id);
+            $table->string('fantasy_name');
             $table->timestamps();
         });
     }

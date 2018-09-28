@@ -10,6 +10,6 @@ class Phone extends Model
 
 
     public function Client(){
-        return $this->hasOne(Client::class);
+        return $this->belongsToMany(Client::class);
     }
 }

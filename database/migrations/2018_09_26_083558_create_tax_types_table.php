@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsTable extends Migration
+class CreateTaxTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
+        Schema::create('tax_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->unsignedMediumInteger('uxpack');
-            $table->string('file',128)->nulleable();
-            $table->unsignedMediumInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->unsignedMediumInteger('brand_id');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('items');
+        Schema::dropIfExists('tax_types');
     }
 }

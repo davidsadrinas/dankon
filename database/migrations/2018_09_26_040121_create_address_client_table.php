@@ -15,10 +15,10 @@ class CreateAddressClientTable extends Migration
     {
         Schema::create('address_client', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedMediumInteger('address_id');
-            $table->foreign('address_id')->references('id')->on('addresses')->onDelete('cascade')->onUpdate('cascade');
-            $table->unsignedMediumInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('address_id')->unsigned();
+            $table->foreign('address_id')->references('id')->on('addresses');
+            $table->integer('client_id')->unsigned();
+            $table->foreign('client_id')->references('id')->on('clients');
             $table->timestamps();
         });
     }
